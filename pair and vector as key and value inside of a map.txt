@@ -1,0 +1,48 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<map>
+#include<vector>
+using namespace std;
+
+int main() {
+    cout << "Hello world!";
+    map <pair<string, string> , vector<int> > m;
+    //   <   Key-------------------Value   >               
+    int T;
+    cin >> T;
+    
+    for(int i = 0; i < T ; i++){
+        string fn, ln;
+        cout << "Enter First Name and Last name :";
+        cin >> fn >> ln;
+        
+        int n;
+        cout << "Enter Num : ";
+        cin >> n;
+        
+        for(int j = 0; j < n ; j++){
+            
+            int x;
+            cin >> x;
+            
+            m[{fn, ln}].push_back(x);
+        }
+    }
+    
+    for(auto &i : m){
+        auto &fullname = i.first;
+        auto &num = i.second;
+        
+        cout  << fullname.first << " " << fullname.second << endl;
+        
+        cout << "Size : " <<num.size() << endl;
+        
+        for(auto &elements : num){
+            cout << "elements are :" << elements << endl;
+        }
+    }
+    
+    
+
+    return 0;
+}
